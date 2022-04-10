@@ -4,7 +4,7 @@
 
 2. Where the JavaScript code gets executed?
 
-<!-- Ans. Javascript code gets executed in execution context. -->
+<!-- Ans. Javascript code gets executed in javascript engine. -->
 
 3. What does context means in Global Execution Context?
 
@@ -16,7 +16,7 @@
 
 5. Execution context consists of what all things?
 
-<!-- Ans. Execution context consits of all the codes which is running at that time and everything that help in the execution. -->
+<!-- Ans. Execution context consists of all the codes which is running at that time and everything that help in the execution and a memory section -->
 
 6. What are the different types of execution context?
 
