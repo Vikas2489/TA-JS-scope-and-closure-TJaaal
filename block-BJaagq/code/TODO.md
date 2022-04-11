@@ -13,7 +13,7 @@ function change() {
 }
 
 console.log(species); // 'human'
-change();
+change(); //vampire
 console.log(species); // 'human'
 ```
 
@@ -64,16 +64,16 @@ function main() {
   function inner() {
     var four = 'Four';
 
-    console.log(one); // 1
-    console.log(two); // 2
-    console.log(three); // 3
+    console.log(one); // One
+    console.log(two); // Two
+    console.log(three); // Three
   }
-  console.log(four); // 4
+  console.log(four); // Undefined
   inner();
 }
 
 main();
-console.log(one, two, three, four); // 5
+console.log(one, two, three, four); // One, Two, Undefined, Undefined
 ```
 
 <!-- Put your image below -->
