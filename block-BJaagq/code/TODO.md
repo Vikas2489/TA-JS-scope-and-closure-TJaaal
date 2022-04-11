@@ -64,16 +64,16 @@ function main() {
   function inner() {
     var four = 'Four';
 
-    console.log(one); // One
-    console.log(two); // Two
-    console.log(three); // Three
+    console.log(one); // 
+    console.log(two); // 
+    console.log(three); // 
   }
-  console.log(four); // Undefined
+  console.log(four); //It will throw an error which will say that four is not defined
   inner();
 }
 
 main();
-console.log(one, two, three, four); // One, Two, Undefined, Undefined
+console.log(one, two, three, four); // It will throw an error which will say that four is not defined
 ```
 
 <!-- Put your image below -->
