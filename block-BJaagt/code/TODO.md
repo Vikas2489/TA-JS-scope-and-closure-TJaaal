@@ -1,3 +1,5 @@
+\
+
 Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
 Example:
@@ -66,9 +68,9 @@ let username = 'John';
 if (true) {
   let username = 'Arya';
 }
-console.log(username); // error saying that username has already been defined
+console.log(username); // John
 ```
-In the console, we will see an error saying that username has already been taken.
+In the console, we will see John.
 
 7. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
@@ -95,7 +97,7 @@ console.log(i, 'Second'); //  we will see 10 "second" {when the loop will end th
 
 ```js
 for (let i = 0; i < 10; i++) {
-  console.log(i, 'First'); //  we will see 0 to 9 along with that first will be written.
+  console.log(i, 'First'); //we will see 0 to 9 along with that first will be written.
 }
-console.log(i, 'Second'); //  10 "second"
+console.log(i, 'Second'); //i is not defined, Because we create i variable using let is only accessible inside the block scope.
 ```
