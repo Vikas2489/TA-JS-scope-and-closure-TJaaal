@@ -46,7 +46,7 @@ Create the execution context diagram of the following code line by line.
 
 ```js
 counter();
-function counter(){
+funciton counter(){
   let count = 0;
   funciton increment(){
     return count++;
