@@ -6,9 +6,9 @@
 
 ```js
 function forEach(arr, cb){
-  for(let elm of arr){
-    cb(elm);
-  }
+ arr.reduce(function(acc ,cv ,array ,i){
+    cb(cv, i, array);
+ })
 }
 
 forEach(['Sam', 'Jon', 'Arya'], (name, i, arr) =>
@@ -23,12 +23,12 @@ forEach(['Sam', 'Jon', 'Arya'], (name, i, arr) =>
 - It should work exactly like array `map` method
 
 ```js
+
 function map(arr,cb){
-  let final= [];
-  for(let elm of arr){
-    final.push(cb(elm));
-  }
-  return final;
+return arr.reduce(function(acc,cv) {
+acc.concat(acc.push(cb(cv))) 
+return acc;
+  }, []) 
 }
 
 map(['Sam', 'Jon', 'Arya'], (name) => name + name); // ['SamSam', 'JonJon', 'AryaArya']
@@ -42,13 +42,11 @@ map(['Sam', 'Jon', 'Arya'], (name) => name + name); // ['SamSam', 'JonJon', 'Ary
 
 ```js
 function filter(arr, cb) {
-  let final= [];
-  for(let elm of arr){
-    if(cb(elm)){
-      final.push(elm);
-    }
-  }
-  return final;
+return arr.reduce(function (acc, cv){
+if(cb(cv)){
+  acc.push(cv);
+} return acc;
+ }, [])
 }
 filter(['Sam', 'Jon', 'Arya'], (name) =>
   name.startsWith('S')
