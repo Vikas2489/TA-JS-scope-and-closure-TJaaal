@@ -16,7 +16,9 @@ function outer(str){
 ```js
 
 function delay(cb,miliSeconds){
-  return setTimeout(cb, miliSeconds);
+  return function (){
+    setTimeout(cb, miliSeconds);
+  }
 }
 
 ```
@@ -81,9 +83,7 @@ index++;
 }
 }
 
-
-
-let next = [1, 2, 3, 4, 5];
+let next = forEach([1, 2, 3, 4, 5]);
 next(); // 1
 next(); // 2
 next(); // 3
