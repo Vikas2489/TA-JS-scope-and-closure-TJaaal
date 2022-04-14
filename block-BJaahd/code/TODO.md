@@ -1,6 +1,7 @@
 Create the execution context diagram for following code. What will be the output in each line of code
 
 ```js
+
 function getCounter() {
   let privateCounter = 0;
   function changeBy(val) {
@@ -19,19 +20,21 @@ function getCounter() {
   };
 };
 
-let counter = getCounter()
+let counter = getCounter();
 
-counter.value();  // output
-counter.increment(); // output
-counter.increment(); // output
-counter.value(); // output
-counter.decrement(); // output
-counter.value(); // output
+counter.value();  // 0
+counter.increment(); // undefined {As the function increment inside the object doesn't return anything.}
+counter.increment(); // undefined {As the function increment inside the object doesn't return anything.}
+counter.value(); // 2
+counter.decrement(); // undefined {As the function increment inside the object doesn't return anything.}
+counter.value(); // 1
+
 ```
 
 2. Create the execution context diagram and write the output.
 
 ```js
+
 function makeCounter() {
   let privateCounter = 0;
   function changeBy(val) {
@@ -55,13 +58,14 @@ function makeCounter() {
 let counter1 = makeCounter();
 let counter2 = makeCounter();
 
-console.log(counter1.value());  // OUTPUT
+console.log(counter1.value());  // 0
 
-counter1.increment();
-counter1.increment();
-console.log(counter1.value()); // OUTPUT
+counter1.increment(); // Undefined
+counter1.increment(); // Undefined
+console.log(counter1.value()); // 2
 
-counter1.decrement();
-console.log(counter1.value()); // OUTPUT
-console.log(counter2.value()); // OUTPUT
+counter1.decrement(); // Undefined
+console.log(counter1.value()); // 1
+console.log(counter2.value()); // 0
+
 ```
