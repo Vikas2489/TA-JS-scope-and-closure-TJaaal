@@ -31,12 +31,11 @@ const final = name('Smith'); // final should be "Will Smith"
 ```js
 function isInBetween(a, b) {
  return function(num){
-   for(var i = a; i < b; i++){
-   } if(i = num){
-     return true;
-   } else if(i != num){
-     return false;
-   }
+  if(a > b){
+    return num > b && num < a;
+  } else {
+    return num < b && num > a;
+  }
  }
 }
 
@@ -85,10 +84,13 @@ cricket(); // Your score of Cricket is 2
 
 ```js
 function getCard(suit) {
-  // your code goes here
+  return function (){
+    let cards = [2,3,4,5,6,7,8,9,10,'J', 'Q', 'K', "A"];
+    cards.sort(() => 0.5 - Math.random());
+   return `Card is: ${cards[0]} ${suit}`;
+}
 }
 
-// Output
 const randomClub = getCard('Club');
 randomClub(); // Card is: 6 Club
 randomClub(); // Card is: A Club
