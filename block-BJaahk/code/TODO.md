@@ -38,7 +38,9 @@ if(parameters.length === 2){
 finalArray.push(parameters);
 return;
 } else if(parameters.length === 1){
-  return parameters;
+  let quote = parameters[0];
+  finalArray.forEach(pair => quote = quote.replace(pair[0], pair[1]))
+  return quote;
 }
  } 
 }
@@ -89,16 +91,20 @@ addCache(1); // 11
 addCache('foo'); // {12: 22, 100: 110, 1: 11}
 ```
 
-4. Change the above function in such a way that when the returned function is called with any other value than password. It should first check the object where we are storing the argument and return value. If the key is present return the value form the object itself. Otherwise call the callback function with the parameter.
+4. Change the above function in such a way that when the returned function is called with any other value than password. It should first check the object where we are storing the argument and return value. If the key is present return the value form the object itself. Otherwise call the callback function with the parameter. 
 
-```js
+```js 
 function createCache(callback ,str) {
   let obj = {};
   return function(para1){
 if(para1 !== str){
-  console.log(obj);
-  obj[para1] = callback(para1);
+ if(obj[para1]){
+   console.log('params are not same!');
+ return obj[para1];
+  }else{
+     obj[para1] = callback(para1);
   return callback(para1);
+  }
 } else if(para1 === str){
   return obj;
 } 
