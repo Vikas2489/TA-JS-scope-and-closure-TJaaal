@@ -1,7 +1,28 @@
 1. Construct a function intersection that compares input arrays and returns a new array with elements found in all of the inputs. You can only use reduce method to do this.
 
 ```js
-function intersection(arrays) {}
+function intersection(...arrays) {
+   let first = arrays[0];
+ for(let i = 1; i < arrays.length; i++){
+  let second = arrays[i];
+  first = first.filter(elm => second.includes(elm));
+}
+return first;
+}
+
+
+function intersection(...arrays){
+  let first = arrays[0];
+  let count = 1;
+  let third = first.reduce(function(acc, cv, i){
+  if(arrays[i + 1].includes(cv)){
+    acc.push(cv);
+    count += 1;
+  } 
+  return acc;
+  },[])
+  console.log(third);
+}
 
 // Test
 console.log(
